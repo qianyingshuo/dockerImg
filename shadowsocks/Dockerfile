@@ -27,7 +27,7 @@ RUN yum -y install  python-setuptools-0.9.8-4.el7 \
         curl \
         libev-devel \
         libtool \
-        linux-headers \
+        kernel-headers\
         udns-devel \
         libsodium-devel \
         mbedtls-devel \
