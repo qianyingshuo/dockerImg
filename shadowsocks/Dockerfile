@@ -13,13 +13,12 @@ RUN rpm --rebuilddb
 RUN	rpm --import http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-7 
 RUN	rpm --import https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7 
 RUN	rpm --import https://dl.iuscommunity.org/pub/ius/IUS-COMMUNITY-GPG-KEY 
-RUN	 yum -y install \
+RUN	yum -y install \
 		centos-release-scl \
 		centos-release-scl-rh \
 		epel-release \
-		https://centos7.iuscommunity.org/ius-release.rpm \
-		vim-minimal-7.4.160-1.el7_3.1 \
-        python-setuptools-0.9.8-4.el7 \
+		https://centos7.iuscommunity.org/ius-release.rpm 
+RUN yum -y install  python-setuptools-0.9.8-4.el7 \
         bash.x86_64 \
         tzdata \
         libsodium \
