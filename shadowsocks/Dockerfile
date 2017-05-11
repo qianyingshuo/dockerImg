@@ -34,7 +34,8 @@ RUN yum -y install  python-setuptools-0.9.8-4.el7 \
         pcre-devel \
         tar \
         mbedtls.x86_64 \
-        mbedtls-devel.x86_64
+        mbedtls-devel.x86_64 \
+        make.x86_64
 RUN curl -sSLO https://github.com/shadowsocks/shadowsocks-libev/releases/download/v$SS_LIBEV_VERSION/shadowsocks-libev-$SS_LIBEV_VERSION.tar.gz 
 RUN tar -zxf shadowsocks-libev-$SS_LIBEV_VERSION.tar.gz 
 RUN cd shadowsocks-libev-$SS_LIBEV_VERSION && ./configure --prefix=/usr --disable-documentation && make install
