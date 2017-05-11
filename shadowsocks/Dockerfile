@@ -38,9 +38,7 @@ RUN	 yum -y install \
         mbedtls-devel.x86_64
 RUN curl -sSLO https://github.com/shadowsocks/shadowsocks-libev/releases/download/v$SS_LIBEV_VERSION/shadowsocks-libev-$SS_LIBEV_VERSION.tar.gz 
 RUN tar -zxf shadowsocks-libev-$SS_LIBEV_VERSION.tar.gz 
-RUN cd shadowsocks-libev-$SS_LIBEV_VERSION 
-RUN ./configure --prefix=/usr --disable-documentation 
-RUN make install && cd ../ 
+RUN cd shadowsocks-libev-$SS_LIBEV_VERSION && ./configure --prefix=/usr --disable-documentation && make install
 RUN curl -sSLO https://github.com/xtaci/kcptun/releases/download/v$KCP_VERSION/kcptun-linux-amd64-$KCP_VERSION.tar.gz 
 RUN tar -zxf kcptun-linux-amd64-$KCP_VERSION.tar.gz 
 RUN mv server_linux_amd64 /usr/bin/kcptun 
