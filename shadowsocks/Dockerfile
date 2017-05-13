@@ -46,5 +46,6 @@ RUN mv server_linux_amd64 /usr/bin/kcptun
 EXPOSE 6501
 EXPOSE 6500
 
-ADD whileTrue.sh /whileTrue.sh
+ADD whileTrue.sh /usr/bin/whileTrue.sh
+RUN chmod +x /usr/bin/whileTrue.sh
 ENTRYPOINT ["/whileTrue.sh"]
