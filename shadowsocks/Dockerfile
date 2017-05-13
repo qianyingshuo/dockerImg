@@ -48,4 +48,4 @@ EXPOSE 6500
 
 ADD whileTrue.sh /usr/bin/whileTrue.sh
 RUN chmod +x /usr/bin/whileTrue.sh
-ENTRYPOINT ["/whileTrue.sh"]
+ENTRYPOINT ["/usr/bin/whileTrue.sh"]
