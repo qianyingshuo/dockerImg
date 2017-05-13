@@ -43,5 +43,8 @@ RUN curl -sSLO https://github.com/xtaci/kcptun/releases/download/v$KCP_VERSION/k
 RUN tar -zxf kcptun-linux-amd64-$KCP_VERSION.tar.gz 
 RUN mv server_linux_amd64 /usr/bin/kcptun 
 
+EXPOSE 6501
+EXPOSE 6500
+
 ADD whileTrue.sh /whileTrue.sh
 ENTRYPOINT ["/whileTrue.sh"]

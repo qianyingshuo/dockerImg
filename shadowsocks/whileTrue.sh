@@ -4,9 +4,10 @@ kcpasswd=${$2:-""}
 ssFlag=false;
 kcpFlag=false;
 
-while true;
-do
-
+# while true;
+# do
+#
+echo "BEGIN WhileTrue";
 if [ $(ps -ef | grep ss-server | grep -v grep | wc -l) -gt 0 ];then
     kcpFlag=true;
 else
@@ -27,4 +28,4 @@ fi
 if ${ssFlag} && ${kcpasswd};then
     sleep 5;
 fi
-done
+# done
