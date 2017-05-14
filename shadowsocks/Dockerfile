@@ -1,5 +1,7 @@
 # ss
 # default ss password 'default'
+# kcppasswd KCPPASS
+# ss password SSPASS
 # tcp 6501
 # udp 6500
 
@@ -48,4 +50,5 @@ EXPOSE 6500
 
 ADD whileTrue.sh /usr/bin/whileTrue.sh
 RUN chmod +x /usr/bin/whileTrue.sh
-ENTRYPOINT ["/usr/bin/whileTrue.sh"]
+# ENTRYPOINT ["/usr/bin/whileTrue.sh"]
+CMD ["/usr/bin/whileTrue.sh"]
