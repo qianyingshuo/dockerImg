@@ -1,6 +1,18 @@
 #!/usr/bin/env bash
-sspasswd=${$1:-"default"}
-kcpasswd=${$2:-""}
+sspasswd="default"
+kcpasswd=""
+
+if [[ ${#} -gt 0 ]]
+then
+echo 'ss';
+sspasswd=${1};
+fi
+if [[ ${#} -gt 1 ]]
+then
+echo 'kcp';
+kcpasswd=${2}
+fi
+
 ssFlag=false;
 kcpFlag=false;
 

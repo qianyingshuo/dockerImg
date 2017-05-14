@@ -29,8 +29,20 @@ cd shadowsocks-libev-$SS_LIBEV_VERSION && ./configure --prefix=/usr --disable-do
 curl -sSLO https://github.com/xtaci/kcptun/releases/download/v$KCP_VERSION/kcptun-linux-amd64-$KCP_VERSION.tar.gz 
 tar -zxf kcptun-linux-amd64-$KCP_VERSION.tar.gz 
 mv server_linux_amd64 /usr/bin/kcptun 
-sspasswd=${$1:-"default"}
-kcpasswd=${$2:-""}
+
+sspasswd="default"
+kcpasswd=""
+
+if [[ ${#} -gt 0 ]]
+then
+echo 'ss';
+sspasswd=${1};
+fi
+if [[ ${#} -gt 1 ]]
+then
+echo 'kcp';
+kcpasswd=${2}
+fi
 ssFlag=false;
 kcpFlag=false;
 
