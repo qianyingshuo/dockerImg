@@ -51,4 +51,5 @@ EXPOSE 6500
 ADD whileTrue.sh /usr/bin/whileTrue.sh
 RUN chmod +x /usr/bin/whileTrue.sh
 # ENTRYPOINT ["/usr/bin/whileTrue.sh"]
-CMD ["/usr/bin/whileTrue.sh"]
+#CMD ["/usr/bin/whileTrue.sh"]
+CMD ["/usr/bin/supervisord", "--configuration=/etc/supervisord.conf"]
